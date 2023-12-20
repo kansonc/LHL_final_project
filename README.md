@@ -1,5 +1,6 @@
 # LHL_final_project
 
+Does not have to be big, just has to have a good scope. - only 5-6 slides.  Title - agenda - background, overall solution intended, thried these, this is what I did and here is the result - talk about "why" you made changes improve the predictatbility (in support of the business need/commanders intent), here's what is needeed for the production level, in the future, questions.  You have all the stuff, just get the slide deck together.  Completeness and Accuracy - this what you are looking for - the cleaner the data... trying to create models that are more finite.  Using multiple models to pin point the data.  They care how you think - how does Kieran think, how can he solve our business problems.  80% solution.
 
 ## Target Audience
 
@@ -9,20 +10,20 @@ My intent is to provide a technical framework and references that a Data scienti
 
 ## Deliverable: Proof of Concept for future modelling
 
-1. A Model of the given data as a proof of the model.
+1. A Model of the given data as a proof of a predictive model.
 
 2. A Production framework to:
-    1. Observe more data features to provide "better data" for the model (Research)
-    2. Improve existing data features (Analysis)
-    3. Ingest, Clean, and Weighted Feature importance into the model to help its predicting power (Visualization)
+    1. Observe more data features to provide "better data" for the model (Research) - preventative maintenance on older vehicle.  
+    2. Improve existing data features (Analysis) *KPI* Analysis 
+    3. Ingest, Clean, and Weighted KPI importance into the model to help its predicting power (Visualization)
 
-3. What things need to change in operations, such as procedures and guidelines, to improve the delivery time.
+3. What things need to change in operations, such as procedures and guidelines, to improve the delivery time.  Using a truck that has a battery that can charge vehicle.  Chatbot to communicate with the customer, only 1 phone number, the customer gets all of the information - timing.  Text ratings and quick response.  Measuring clicking the link to see where the delivery is.  Measureing the customer's experience.  Adding texting as measuring customer experience.  Telling when the food will be delivered via text - delays and when they are close.  This is not a skip the dishes.  Assumptions that something could also be repeat busienss.
 
 
 ### This is what I am trying to figure out (, so what? How does this affec the business)
 
-1. Which features are most important in determining the delivery time of the given model
-    1. So that the business can focus on improving or accounting for those features. 
+1. Which features are most important in determining the delivery time of the given model.  What KPIs do I want to see and measure
+    1. So that the business can focus on improving or accounting for those KPI. Delivery Experience is the key, setting customer expectations.
 2. What an end-to-end production could be using tools.
     1. So that there is a cost efficient method (free - financial impact) to produce further results
     2. So that there is a historical reference based on the date where it can be 
