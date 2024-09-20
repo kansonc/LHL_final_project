@@ -80,12 +80,14 @@ def pp_func_strip_chars(column_series: pd.Series, string_to_strip: str):
     Transforms and returns a series by removing a user defined string
     '''
     column_series.replace(string_to_strip, '', inplace=True, regex=True)
+    column_series = column_series.str.strip()
     return column_series
 
 
 def pp_func_dtype_change(column_series: pd.Series, data_type_to_change_to: str):
     '''
-    Transforms and returns a series (Arg: column_series) by changing its data type (Arg: data_type_to_change_to)
+    Transforms and returns a series (Arg: column_series) by 
+    changing its data type (Arg: data_type_to_change_to)
     
     '''
     # The following conditional
@@ -149,22 +151,18 @@ def pp_post_stats(raw_data: pd.DataFrame, transformed_data: pd.DataFrame):
     df_org_cols_list = raw_data.columns.tolist()
 
     # Stage an empty dataframe
-    df_pp_post_stats = pd.DataFrame(columns=['column'
-                                                ,'data_type_before'
-                                                ,'data_type_after'
-                                                ,'null_count_before'
-                                                ,'null_count_after'
-                                                ]
-    )
+    df_pp_post_stats = pd.DataFrame()
+
 
     # Create stats for before and after quick clean of the data
-    for column_name in df_org_cols_list:
+    for column_name_raw, column_name_transformed in zip(raw_data.columns, transformed_data.columns):
         row_data =  pd.DataFrame(
-                    {'column'           :[column_name]
-                    ,'data_type_before' :[raw_data[column_name].dtype]
-                    ,'data_type_after'  :[transformed_data[column_name].dtype]
-                    ,'null_count_before':[raw_data[column_name].isna().sum()]
-                    ,'null_count_after' :[transformed_data[column_name].isna().sum()]
+                    {'old_column_name'  :[column_name_raw]
+                    ,'new_column_name'  :[column_name_transformed]
+                    ,'data_type_before' :[raw_data[column_name_raw].dtype]
+                    ,'data_type_after'  :[transformed_data[column_name_transformed].dtype]
+                    ,'null_count_before':[raw_data[column_name_raw].isna().sum()]
+                    ,'null_count_after' :[transformed_data[column_name_transformed].isna().sum()]
                     }
         )
         df_pp_post_stats = pd.concat([df_pp_post_stats, row_data], ignore_index=True)

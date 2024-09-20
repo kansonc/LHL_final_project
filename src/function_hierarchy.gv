@@ -1,0 +1,6 @@
+// Function Hierarchy
+digraph {
+	my_function [label="my_function()"]
+	my_other_function [label="my_other_function()"]
+	my_other_function -> my_function
+}
