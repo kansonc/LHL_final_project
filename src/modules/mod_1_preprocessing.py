@@ -5,16 +5,12 @@ import numpy as np
 
 
 # Column Cleaning Function assignments
-def preprocessing_initial_transformations_func(pp_df_strip_str, pp_df_new_dtype, pp_df_new_col_name):
+def preprocessing_initial_transformations_func(pp_df_strip_str, pp_df_new_dtype, pp_df_new_col_name, delivery_df_raw):
     '''
     Applies replacement functions to all values of the dataframe to 
     1. convert all whitespace-only and null values to None, NaN, and NaT as needed,
     2. convert all columns to a desired dtype, and
     3. rename columns 
-    
-    Args:
-        initial_df: original data at ingestion
-        pp_df_changes: takes the preprocessing_df_merged
     
     Global Variables:
         delivery_df_pp: contains all changes to the dataset from this function
@@ -22,8 +18,7 @@ def preprocessing_initial_transformations_func(pp_df_strip_str, pp_df_new_dtype,
         pp_df_post_stats: shows if the changes have been implemented
         
     '''
-    from modules.mod_0_preliminary import delivery_df_raw, delivery_df
-    ### Create a Dataframe/Series of the original columns from data ingestion
+    # ### Create a Dataframe/Series of the original columns from data ingestion
     df_initial_col_names = pd.DataFrame(delivery_df_raw.columns, columns= ['old_column_name'])
 
     ### Create a Report of Changes
@@ -71,6 +66,8 @@ def preprocessing_initial_transformations_func(pp_df_strip_str, pp_df_new_dtype,
     # Create a table that shows the changes
     global pp_df_post_stats                
     pp_df_post_stats = pp_post_stats(delivery_df_raw, delivery_df_pp)
+    
+    return delivery_df_pp
     
 
 

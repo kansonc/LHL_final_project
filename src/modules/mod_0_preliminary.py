@@ -59,3 +59,5 @@ def data_ingest():
     global delivery_df, delivery_df_raw
     delivery_df = pd.read_csv(r'../data/delivery_2_excel_edits.csv')
     delivery_df_raw = pd.read_csv(r'../data/delivery_2_excel_edits.csv')
+    
+    return delivery_df
